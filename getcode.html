@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<!-- layer 2.3 -->
+		<script src="https://assets.yunduanchongqing.com/assets/plugins/layer/layer.js"></script>
+		<title>短信验证码</title>
+		<script src="jquery.getcode.js"></script>
+	</head>
+	<body>
+		<input type="text" value="" autocomplete="off" name="mobile" placeholder="请输入已绑定的手机号"/>
+		<input type="text" value="" autocomplete="off" name="code" placeholder="短信验证码"/>	
+		<a href="javascript:void(0);" rel-action="code" data-url="http://api.demo.yunduanchongqing.com/api.html">获取验证码</a>
+		<script type="text/javascript">
+			$(function() {
+				$('[rel-action=code]').getCode({
+					params:{
+						'mobile':'[name=mobile]',
+						'code':'#code1',
+					}
+				});//.trigger('click');
+			});
+		</script>
+	</body>
+</html>
